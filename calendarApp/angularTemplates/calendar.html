@@ -1,0 +1,17 @@
+<section>
+    <article class="calendar">
+        <div class="calendarHeader">{{calendarObject.monthName}} - {{calendarObject.year}}</div>
+        <div class="calendarDaysHeader">
+             <div class="calendarDayTile" ng-repeat="dayHeader in ::dayHeaderArray"> 
+                 {{dayHeader[0]}} 
+             </div> 
+        </div>
+        <div class="calendarDaysDetail">
+             <div class="calendarWeek" ng-repeat="week in calendarObject.numberOfWeeks">
+                <div class="calendarDayTile {{calendarObject.weeksObject[day][week].css}}" ng-repeat="day in ::dayHeaderArray" ng-attr-title="{{calendarObject.weeksObject[day][week].holiDayName}}"> 
+                    {{calendarObject.weeksObject[day][week].name}}
+                </div> 
+             </div> 
+        </div>
+    </article>
+</section>
